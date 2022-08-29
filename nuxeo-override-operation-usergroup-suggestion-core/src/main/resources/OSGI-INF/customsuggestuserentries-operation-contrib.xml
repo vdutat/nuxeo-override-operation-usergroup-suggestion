@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<component name="com.acme.automation.operations.customsuggestuserentries">
+
+  <require>org.nuxeo.ecm.core.automation.features.operations</require>
+  
+  <extension point="operations" target="org.nuxeo.ecm.core.operation.OperationServiceComponent">
+
+    <operation replace="true" class="com.acme.automation.operations.CustomSuggestUserEntries"/>
+
+  </extension>
+
+</component>

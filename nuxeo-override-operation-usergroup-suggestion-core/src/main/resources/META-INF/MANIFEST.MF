@@ -1,0 +1,9 @@
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Vendor: com.acme.automation
+Bundle-Version: 1.0.0
+Bundle-Name: nuxeo-override-operation-usergroup-suggestion-core
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.acme.automation.nuxeo-override-operation-usergroup-suggestion-core;singleton=true
+Nuxeo-Component: OSGI-INF/customsuggestuserentries-operation-contrib.xml
