@@ -92,7 +92,11 @@ public class CustomSuggestUserEntries extends SuggestUserEntries {
 
     @OperationMethod
     public Blob run() throws IOException {
-        log.warn("<run> ");
+        if (log.isDebugEnabled()) {
+            log.debug("<run> ");
+        }
+        // Services from extended class need to be instantiated this way, 
+        // injection with @Context annotation does not work.
         this.userManager = Framework.getService(UserManager.class);
         this.schemaManager = Framework.getService(SchemaManager.class);
         this.directoryService = Framework.getService(DirectoryService.class);
@@ -104,7 +108,9 @@ public class CustomSuggestUserEntries extends SuggestUserEntries {
      */
     @Override
     protected List<Map<String, Object>> usersToMapWithGroupRestrictions(DocumentModelList userList) {
-        log.warn("<usersToMapWithGroupRestrictions> ");
+        if (log.isDebugEnabled()) {
+            log.debug("<usersToMapWithGroupRestrictions> ");
+        }
         // TODO put your code HERE and commment the following line if not needed
         // See https://github.com/nuxeo/nuxeo/blob/10.10/nuxeo-features/nuxeo-automation/nuxeo-automation-features/src/main/java/org/nuxeo/ecm/automation/core/operations/users/SuggestUserEntries.java
         return super.usersToMapWithGroupRestrictions(userList);
